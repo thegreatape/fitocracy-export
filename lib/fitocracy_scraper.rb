@@ -44,7 +44,9 @@ class FitocracyScraper
     print "exporting #{name} ... "
 
     select name
+    current_window_count = page.driver.browser.window_handles.length
     click_on "CSV"
+    wait_until { page.driver.browser.window_handles.length == current_window_count + 1 }
 
     within_window page.driver.browser.window_handles.last do
       csv = current_csv
