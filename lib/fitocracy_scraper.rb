@@ -11,7 +11,7 @@ class FitocracyScraper
 
     Capybara.current_driver = :poltergeist
     Capybara.app_host = 'http://www.fitocracy.com'
-    Capybara.default_wait_time = 10
+    Capybara.default_wait_time = 20
   end
 
   def log_in
