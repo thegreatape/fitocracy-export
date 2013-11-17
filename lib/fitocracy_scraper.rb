@@ -50,7 +50,7 @@ class FitocracyScraper
 
     within_window page.driver.browser.window_handles.last do
       csv = current_csv
-      filename = "#{name.gsub(' ', '-').downcase}.csv"
+      filename = "#{name.gsub(' ', '_').gsub(/\W/, '').downcase}.csv"
       File.open(filename, 'w') { |file| file.write(csv) }
 
       puts "wrote #{csv.split("\n").length - 1} sets to #{filename}"
